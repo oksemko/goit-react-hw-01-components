@@ -2,16 +2,16 @@ import PropTypes from 'prop-types';
 import styles from "./Profile.module.css";
 
 
-export const Profile = ({ name, tag, location, avatar, stats: { followers, views, likes } }) => {
+export const Profile = ({ username, tag, location, avatar, stats: { followers, views, likes } }) => {
   return (
     <div className={styles.profile}>
       <div className={styles.description}>
         <img
           src={avatar}
-          alt={"User avatar" + name}
+          alt={'User avatar ' + { username }}
           className={styles.avatar}
         />
-        <p className={styles.name}>{name}</p>
+        <p className={styles.name}>{username}</p>
         <p className={styles.tag}>@{tag}</p>
         <p className={styles.location}>{location}</p>
       </div>
@@ -35,7 +35,7 @@ export const Profile = ({ name, tag, location, avatar, stats: { followers, views
 }
 
 Profile.propTypes = {
-  name: PropTypes.string,
+  username: PropTypes.string,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
