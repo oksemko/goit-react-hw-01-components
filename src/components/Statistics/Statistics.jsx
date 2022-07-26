@@ -7,7 +7,7 @@ export const Statistics = ({ title, stats }) => {
     <section className={styles.statistics}>
       {title && <h2 className={styles.title}>{title}</h2>}
 
-      <ul className={styles.stat-list}>
+      <ul className={styles.statlist}>
         {stats.map(({ id, label, percentage }) => {
           return (
             <li
@@ -16,7 +16,7 @@ export const Statistics = ({ title, stats }) => {
               style={{ backgroundColor: getRandomHexColor() }}
             >
               <span className={styles.label} >{label}</span>
-              <span className={styles.percentage}>{percentage}</span>
+              <span className={styles.percentage}>{percentage}%</span>
             </li>
           );
         })}
